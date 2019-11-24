@@ -4,11 +4,73 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WordsLearner.Views.Pages"
+      xmlns:converters="clr-namespace:WordsLearner.ValueConverters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ContentPage">
 
-    <Grid Background="Gray">
-        
+    <Page.Resources>
+        <converters:AppViewToView x:Key="AppViewToView"/>
+    </Page.Resources>
+
+    <Grid Background="WhiteSmoke">
+        <!--#region RowDefinitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--#endregion RowDefinitions-->
+
+        <!--#region Navabar-->
+        <Grid Grid.Row="0" Background="#264B80">
+            <!--#region ColumnDefinitions-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <!--#endregion ColumnDefinitions-->
+
+            <!--#region App Name-->
+            <StackPanel Grid.Column="0" Orientation="Horizontal"
+                        Margin="3" VerticalAlignment="Center">
+                <Image Margin="3" Source="/Assets/Images/InsideAppIcon.png"/>
+                <Label Foreground="whitesmoke" Margin="0, 10" FontSize="20">Words Learner</Label>
+            </StackPanel>
+            <!--#endregion App Name-->
+            
+            <!--#region NavButtons-->
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Button Name="Home" Background="Transparent" BorderThickness="0" Width="110">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Home" Style="{StaticResource LabelInNavBar}"/>
+                        <Image Margin="2" Width="20" Source="/Assets/Images/home_s.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="Dictionary" Background="Transparent" BorderThickness="0" Width="110">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Dictionary" Style="{StaticResource LabelInNavBar}"/>
+                        <Image Margin="2" Width="20" Source="/Assets/Images/dictionary.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="Excercises" Background="Transparent" BorderThickness="0" Width="110">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Excercise" Style="{StaticResource LabelInNavBar}"/>
+                        <Image Margin="2" Width="20" Source="/Assets/Images/barbell.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="Translator" Background="Transparent" BorderThickness="0" Width="110">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Translator" Style="{StaticResource LabelInNavBar}"/>
+                        <Image Margin="2" Width="20" Source="/Assets/Images/language.png"/>
+                    </StackPanel>
+                </Button>
+                
+            </StackPanel>
+            <!--#endregion NavButtons-->
+        </Grid>
+        <!--#endregion Navabar-->
+        <UserControl Content="{Binding View.CurrentView, Converter={StaticResource AppViewToView}}"
+                     Grid.Row="1"/>
     </Grid>
 </Page>

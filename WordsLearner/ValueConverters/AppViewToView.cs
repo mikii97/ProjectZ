@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using WordsLearner.Views.Controls;
 
 namespace WordsLearner.ValueConverters
 {
@@ -15,8 +16,8 @@ namespace WordsLearner.ValueConverters
         {
             switch ((AppView)value)
             {
-                case AppView.MainPage:
-                    //return new MainPage();
+                case AppView.Translator:
+                    return new Translator();
 
                 default:
                     return null;

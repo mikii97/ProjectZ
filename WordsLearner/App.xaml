@@ -4,6 +4,36 @@
              xmlns:local="clr-namespace:WordsLearner"
              StartupUri="Windows/MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="LatoRegular">/Assets/Fonts/#Lato Regular</FontFamily>
+
+        <!--#region Styles-->
+        <Style TargetType="{x:Type Label}" x:Key="LabelInNavBar">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+        <Style TargetType="{x:Type Label}" x:Key="LabelInTranslate">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Margin" Value="20 60 20 0"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="Buttons">
+            <Setter Property="Background" Value="#264B80"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Lato"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="Margin" Value="0 20"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="TextBox">
+            <Setter Property="Margin" Value="20 5 20 10"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="25"/>
+        </Style>
+        <!--#endregion Styles-->
+
     </Application.Resources>
 </Application>

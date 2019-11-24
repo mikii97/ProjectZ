@@ -8,6 +8,6 @@ namespace WordsLearner.Data
 {
     public enum AppView
     {
-        MainPage = 0
+        Translator = 0
     }
 }

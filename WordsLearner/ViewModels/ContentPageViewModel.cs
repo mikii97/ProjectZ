@@ -41,7 +41,7 @@ namespace WordsLearner.ViewModels
 
         public ContentPageViewModel()
         {
-            ChangeView(AppView.MainPage);
+            ChangeView(AppView.Translator);
         }
 
         public void ChangeView(AppView view)

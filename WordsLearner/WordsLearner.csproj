@@ -67,6 +67,9 @@
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\ContentPageViewModel.cs" />
     <Compile Include="ViewModels\PopUpViewModel.cs" />
+    <Compile Include="Views\Controls\Translator.xaml.cs">
+      <DependentUpon>Translator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\ContentPage.xaml.cs">
       <DependentUpon>ContentPage.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Controls\Translator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\ContentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,11 +137,44 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="AppIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\AppIcon.ico" />
+    <Resource Include="Assets\Images\barbell.png" />
+    <Resource Include="Assets\Images\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\home_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\dictionary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\abc_block_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\home_m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\home_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\ratin_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\rating_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\InsideAppIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
