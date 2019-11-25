@@ -8,12 +8,14 @@ public class WordService
 {
     private DBClassesDataContext dataContext; //object is created to represent our database
 
-    public WordService(DBClassesDataContext dataContext) //constructor
+	///constructor
+    public WordService(DBClassesDataContext dataContext) 
     {
         this.dataContext = dataContext;
     }
-
-    public ICollection<Word> getAll() //to get all_words
+	
+	///to get all_words
+    public ICollection<Word> getAll() 
     {
         return dataContext.Words.ToList();
     }
@@ -29,13 +31,14 @@ public class WordService
         dataContext.Words.InsertAllOnSubmit(wordList); //we add information to the table
         dataContext.SubmitChanges(); //to execute a sql insert
     }
-
-    public bool checkIfWordsExistInDb(String word1, String word2) //cheking if words exist in our database
+	
+	///cheking if words exist in our database
+    public bool checkIfWordsExistInDb(String word1, String word2) 
     {
         return dataContext.Words.Where(w => w.word1 == word1 || w.word1 == word2).ToList().Count() == 0;
     }
 	
-	//lower functions are needed for further work
+	///lower functions are needed for further work
     public ICollection<Word> getWordsByLanguageId(long id)
     {
         return dataContext.Words.Where(w => w.language_id == id).ToList();
